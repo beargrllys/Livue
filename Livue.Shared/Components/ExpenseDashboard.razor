@@ -1,0 +1,90 @@
+@using Livue.Shared.Models
+@using Livue.Shared.Services
+@inject IExpenseService ExpenseService
+
+<div class="dashboard">
+    @if (summary is null)
+    {
+        <p class="loading">불러오는 중...</p>
+    }
+    else
+    {
+        <div class="dashboard-header">
+            <div class="live-indicator">
+                <span class="dot"></span>
+                실시간 · @summary.LastUpdated.ToString("HH:mm") 업데이트 · @summary.Location
+            </div>
+            <div class="header-actions">
+                <span class="today-expense-label">오늘 지출</span>
+                <button class="menu-button" type="button" aria-label="메뉴">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="dashboard-body">
+            <div class="today-panel">
+                <div class="panel-label">오늘 쓴 돈</div>
+                <div class="today-amount">@summary.TodaySpent.ToString("N0")</div>
+
+                <div class="remaining-line">
+                    <span class="remaining-amount">@summary.RemainingToday.ToString("N0")원 남음</span>
+                    <span class="daily-budget"> / 하루 @summary.DailyBudget.ToString("N0")</span>
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-fill" style="width:@((summary.DailyProgress * 100).ToString("0.##"))%"></div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="month-panel">
+                <div class="panel-label">이번 달 누적</div>
+                <div class="month-amount">@summary.MonthlySpent.ToString("N0")</div>
+
+                <div class="progress-track thin">
+                    <div class="progress-fill" style="width:@((summary.MonthlyProgress * 100).ToString("0.##"))%"></div>
+                </div>
+                <div class="month-caption">월 예산 @summary.MonthlyBudget.ToString("N0")의 @summary.MonthlyProgressPercent%</div>
+
+                <div class="chart-label">최근 7일</div>
+                <div class="chart">
+                    @for (var i = 0; i < summary.Last7DaysSpent.Count; i++)
+                    {
+                        var isLast = i == summary.Last7DaysSpent.Count - 1;
+                        var max = summary.Last7DaysSpent.Count > 0 ? summary.Last7DaysSpent.Max() : 1;
+                        var heightPercent = max <= 0 ? 0 : (double)summary.Last7DaysSpent[i] / max * 100;
+
+                        <div class="chart-column">
+                            <div class="chart-bar @(isLast ? "chart-bar-today" : "")" style="height:@(heightPercent.ToString("0.##"))%"></div>
+                            <div class="chart-day @(isLast ? "chart-day-today" : "")">@summary.Last7DaysLabels[i]</div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="expense-list">
+            @foreach (var expense in summary.RecentExpenses)
+            {
+                <div class="expense-card">
+                    <div class="expense-info">
+                        <div class="expense-category">@expense.Category</div>
+                        <div class="expense-time">@expense.Time.ToString("HH:mm")</div>
+                    </div>
+                    <div class="expense-amount">@expense.Amount.ToString("N0")</div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    private DailyExpenseSummary? summary;
+
+    protected override async Task OnInitializedAsync()
+    {
+        summary = await ExpenseService.GetTodaySummaryAsync();
+    }
+}

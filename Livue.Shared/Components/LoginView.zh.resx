@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GreetingShort" xml:space="preserve">
+    <value>&#x6B22;&#x8FCE;&#xFF01;</value>
+  </data>
+  <data name="GreetingFull" xml:space="preserve">
+    <value>Livue &#x5B88;&#x62A4;&#x60A8;&#x7684;&#x751F;&#x6D3B;</value>
+  </data>
+  <data name="LoginSubtitle" xml:space="preserve">
+    <value>&#x767B;&#x5F55;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4E3A;&#x60A8;&#x5C55;&#x793A;&#x6709;&#x7528;&#x7684;&#x4FE1;&#x606F;</value>
+  </data>
+  <data name="UsernameLabel" xml:space="preserve">
+    <value>&#x8D26;&#x53F7;</value>
+  </data>
+  <data name="UsernamePlaceholder" xml:space="preserve">
+    <value>&#x8BF7;&#x8F93;&#x5165;&#x8D26;&#x53F7;</value>
+  </data>
+  <data name="PasswordLabel" xml:space="preserve">
+    <value>&#x5BC6;&#x7801;</value>
+  </data>
+  <data name="PasswordPlaceholder" xml:space="preserve">
+    <value>&#x8BF7;&#x8F93;&#x5165;&#x5BC6;&#x7801;</value>
+  </data>
+  <data name="LoginButton" xml:space="preserve">
+    <value>&#x767B;&#x5F55;</value>
+  </data>
+  <data name="LoginButtonBusy" xml:space="preserve">
+    <value>&#x767B;&#x5F55;&#x4E2D;...</value>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>&#x8D26;&#x53F7;&#x6216;&#x5BC6;&#x7801;&#x4E0D;&#x6B63;&#x786E;&#x3002;</value>
+  </data>
+  <data name="UsernameRequired" xml:space="preserve">
+    <value>&#x8BF7;&#x8F93;&#x5165;&#x8D26;&#x53F7;&#x3002;</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>&#x8BF7;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#x3002;</value>
+  </data>
+  <data name="SelectLanguageTitle" xml:space="preserve">
+    <value>&#x8BF7;&#x9009;&#x62E9;&#x8BED;&#x8A00;</value>
+  </data>
+  <data name="ContinueButton" xml:space="preserve">
+    <value>&#x7EE7;&#x7EED;</value>
+  </data>
+</root>

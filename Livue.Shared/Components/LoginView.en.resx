@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GreetingShort" xml:space="preserve">
+    <value>Welcome!</value>
+  </data>
+  <data name="GreetingFull" xml:space="preserve">
+    <value>Livue watches over your life</value>
+  </data>
+  <data name="LoginSubtitle" xml:space="preserve">
+    <value>Log in and we'll show you useful insights</value>
+  </data>
+  <data name="UsernameLabel" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="UsernamePlaceholder" xml:space="preserve">
+    <value>Enter your username</value>
+  </data>
+  <data name="PasswordLabel" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PasswordPlaceholder" xml:space="preserve">
+    <value>Enter your password</value>
+  </data>
+  <data name="LoginButton" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="LoginButtonBusy" xml:space="preserve">
+    <value>Logging in...</value>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>Incorrect username or password.</value>
+  </data>
+  <data name="UsernameRequired" xml:space="preserve">
+    <value>Please enter your username.</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>Please enter your password.</value>
+  </data>
+  <data name="SelectLanguageTitle" xml:space="preserve">
+    <value>Please select your language</value>
+  </data>
+  <data name="ContinueButton" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+</root>

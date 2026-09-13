@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GreetingShort" xml:space="preserve">
+    <value>&#x3088;&#x3046;&#x3053;&#x305D;&#xFF01;</value>
+  </data>
+  <data name="GreetingFull" xml:space="preserve">
+    <value>Livue&#x304C;&#x3042;&#x306A;&#x305F;&#x306E;&#x751F;&#x6D3B;&#x3092;&#x898B;&#x5B88;&#x308A;&#x307E;&#x3059;</value>
+  </data>
+  <data name="LoginSubtitle" xml:space="preserve">
+    <value>&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3059;&#x308B;&#x3068;&#x5F79;&#x7ACB;&#x3064;&#x60C5;&#x5831;&#x3092;&#x304A;&#x898B;&#x305B;&#x3057;&#x307E;&#x3059;</value>
+  </data>
+  <data name="UsernameLabel" xml:space="preserve">
+    <value>&#x30E6;&#x30FC;&#x30B6;&#x30FC;ID</value>
+  </data>
+  <data name="UsernamePlaceholder" xml:space="preserve">
+    <value>&#x30E6;&#x30FC;&#x30B6;&#x30FC;ID&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;</value>
+  </data>
+  <data name="PasswordLabel" xml:space="preserve">
+    <value>&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;</value>
+  </data>
+  <data name="PasswordPlaceholder" xml:space="preserve">
+    <value>&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;</value>
+  </data>
+  <data name="LoginButton" xml:space="preserve">
+    <value>&#x30ED;&#x30B0;&#x30A4;&#x30F3;</value>
+  </data>
+  <data name="LoginButtonBusy" xml:space="preserve">
+    <value>&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x4E2D;...</value>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>&#x30E6;&#x30FC;&#x30B6;&#x30FC;ID&#x307E;&#x305F;&#x306F;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x304C;&#x6B63;&#x3057;&#x304F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;</value>
+  </data>
+  <data name="UsernameRequired" xml:space="preserve">
+    <value>&#x30E6;&#x30FC;&#x30B6;&#x30FC;ID&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</value>
+  </data>
+  <data name="SelectLanguageTitle" xml:space="preserve">
+    <value>&#x8A00;&#x8A9E;&#x3092;&#x9078;&#x629E;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;</value>
+  </data>
+  <data name="ContinueButton" xml:space="preserve">
+    <value>&#x7D9A;&#x884C;</value>
+  </data>
+</root>

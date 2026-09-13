@@ -1,0 +1,270 @@
+.dashboard {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Pretendard', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 1.5rem 2rem;
+    box-sizing: border-box;
+}
+
+.loading {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #cfcfcf;
+    font-size: 0.85rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #2ecc71;
+    display: inline-block;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.today-expense-label {
+    color: #cfcfcf;
+    font-size: 0.85rem;
+}
+
+.menu-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid #333333;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.menu-icon {
+    display: inline-block;
+    width: 16px;
+    height: 2px;
+    background: #ffffff;
+    position: relative;
+}
+
+    .menu-icon::before, .menu-icon::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 16px;
+        height: 2px;
+        background: #ffffff;
+    }
+
+    .menu-icon::before {
+        top: -5px;
+    }
+
+    .menu-icon::after {
+        top: 5px;
+    }
+
+.dashboard-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.divider {
+    width: 1px;
+    align-self: stretch;
+    background-color: #2a2a2a;
+}
+
+.today-panel {
+    flex: 1.2;
+}
+
+.month-panel {
+    flex: 1;
+}
+
+.panel-label {
+    color: #9a9a9a;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.today-amount {
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.month-amount {
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.remaining-line {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.remaining-amount {
+    color: #2ecc71;
+    font-weight: 600;
+}
+
+.daily-budget {
+    color: #9a9a9a;
+}
+
+.progress-track {
+    margin-top: 1rem;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    overflow: hidden;
+}
+
+    .progress-track.thin {
+        height: 6px;
+        margin-top: 0.5rem;
+    }
+
+.progress-fill {
+    height: 100%;
+    background-color: #2ecc71;
+    border-radius: 5px;
+}
+
+.month-caption {
+    color: #9a9a9a;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.chart-label {
+    color: #9a9a9a;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.75rem;
+    height: 90px;
+}
+
+.chart-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 32px;
+}
+
+.chart-bar {
+    width: 100%;
+    border-radius: 4px;
+    background-color: #3a3a3a;
+    min-height: 4px;
+}
+
+.chart-bar-today {
+    background-color: #2ecc71;
+}
+
+.chart-day {
+    margin-top: 0.5rem;
+    color: #9a9a9a;
+    font-size: 0.8rem;
+}
+
+.chart-day-today {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.expense-list {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.expense-card {
+    flex: 1;
+    min-width: 200px;
+    background-color: #141414;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.expense-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.expense-category {
+    font-size: 0.95rem;
+}
+
+.expense-time {
+    color: #7a7a7a;
+    font-size: 0.75rem;
+}
+
+.expense-amount {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+@media (max-width: 900px) {
+    .dashboard-body {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+    }
+
+    .divider {
+        width: auto;
+        height: 1px;
+    }
+
+    .today-amount {
+        font-size: 3.5rem;
+    }
+}

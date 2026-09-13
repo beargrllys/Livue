@@ -1,0 +1,178 @@
+@using Livue.Shared.Services
+@using Microsoft.Extensions.Localization
+@inject IAuthService AuthService
+@inject ICultureService CultureService
+@inject IStringLocalizer<LoginView> L
+
+<div class="login-page">
+    <div class="login-card">
+        <div class="brand">
+            <span class="dot"></span>
+            Livue
+        </div>
+
+        @if (stage == IntroStage.LanguageSelect)
+        {
+            <h1 class="welcome-title fade-in">@L["SelectLanguageTitle"]</h1>
+
+            <div class="language-select-list fade-in">
+                @foreach (var culture in CultureService.SupportedCultures)
+                {
+                    <button type="button"
+                            class="language-option @(culture.Name == selectedLanguage ? "language-option-active" : "")"
+                            @onclick="() => selectedLanguage = culture.Name">
+                        @GetLanguageLabel(culture.Name)
+                    </button>
+                }
+            </div>
+
+            <button type="button" class="login-button fade-in" @onclick="ConfirmLanguageAsync">
+                @L["ContinueButton"]
+            </button>
+        }
+        else
+        {
+            @if (stage != IntroStage.LoginForm)
+            {
+                <h1 class="welcome-title fade-in">
+                    @L["GreetingShort"]
+                    @if (stage == IntroStage.FullMessage)
+                    {
+                        <br />
+                        <span class="fade-in">@L["GreetingFull"]</span>
+                    }
+                </h1>
+            }
+            else
+            {
+                <p class="login-subtitle fade-in">@L["LoginSubtitle"]</p>
+
+                <EditForm Model="loginModel" OnValidSubmit="HandleLoginAsync" class="login-form fade-in">
+                    <div class="field">
+                        <label for="username">@L["UsernameLabel"]</label>
+                        <InputText id="username" class="text-input" placeholder="@L["UsernamePlaceholder"]" @bind-Value="loginModel.Username" />
+                    </div>
+
+                    <div class="field">
+                        <label for="password">@L["PasswordLabel"]</label>
+                        <InputText id="password" type="password" class="text-input" placeholder="@L["PasswordPlaceholder"]" @bind-Value="loginModel.Password" />
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        <p class="error-message">@errorMessage</p>
+                    }
+
+                    <button type="submit" class="login-button" disabled="@isSubmitting">
+                        @(isSubmitting ? L["LoginButtonBusy"] : L["LoginButton"])
+                    </button>
+                </EditForm>
+            }
+        }
+    </div>
+</div>
+
+@code {
+    private enum IntroStage
+    {
+        LanguageSelect,
+        Greeting,
+        FullMessage,
+        LoginForm
+    }
+
+    private IntroStage stage = IntroStage.Greeting;
+    private string selectedLanguage = "ko";
+
+    private readonly LoginModel loginModel = new();
+    private string? errorMessage;
+    private bool isSubmitting;
+
+    [Parameter]
+    public EventCallback OnLoggedIn { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var hasSavedCulture = await CultureService.TryRestoreSavedCultureAsync();
+
+        if (!hasSavedCulture)
+        {
+            stage = IntroStage.LanguageSelect;
+            selectedLanguage = CultureService.CurrentCulture.Name;
+            return;
+        }
+
+        await RunIntroSequenceAsync();
+    }
+
+    private async Task ConfirmLanguageAsync()
+    {
+        await CultureService.SetCultureAsync(selectedLanguage);
+        stage = IntroStage.Greeting;
+        StateHasChanged();
+
+        await RunIntroSequenceAsync();
+    }
+
+    private async Task RunIntroSequenceAsync()
+    {
+        stage = IntroStage.Greeting;
+        StateHasChanged();
+
+        await Task.Delay(2000);
+        stage = IntroStage.FullMessage;
+        StateHasChanged();
+
+        await Task.Delay(2000);
+        stage = IntroStage.LoginForm;
+        StateHasChanged();
+    }
+
+    private static string GetLanguageLabel(string cultureName) => cultureName switch
+    {
+        "ko" => "\uD55C\uAD6D\uC5B4",
+        "en" => "English",
+        "zh" => "\u4E2D\u6587",
+        "ja" => "\u65E5\u672C\u8A9E",
+        _ => cultureName
+    };
+
+    private async Task HandleLoginAsync()
+    {
+        isSubmitting = true;
+        errorMessage = null;
+
+        if (string.IsNullOrWhiteSpace(loginModel.Username))
+        {
+            errorMessage = L["UsernameRequired"];
+            isSubmitting = false;
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(loginModel.Password))
+        {
+            errorMessage = L["PasswordRequired"];
+            isSubmitting = false;
+            return;
+        }
+
+        var success = await AuthService.LoginAsync(loginModel.Username, loginModel.Password);
+
+        if (success)
+        {
+            await OnLoggedIn.InvokeAsync();
+        }
+        else
+        {
+            errorMessage = L["LoginError"];
+        }
+
+        isSubmitting = false;
+    }
+
+    private class LoginModel
+    {
+        public string Username { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+    }
+}

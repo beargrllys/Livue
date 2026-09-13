@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GreetingShort" xml:space="preserve">
+    <value>&#xD658;&#xC601;&#xD569;&#xB2C8;&#xB2E4;!</value>
+  </data>
+  <data name="GreetingFull" xml:space="preserve">
+    <value>Livue&#xB85C; &#xB2F9;&#xC2E0;&#xC758; &#xC0B6;&#xC744; &#xC9C0;&#xCF1C;&#xBCF4;&#xC544;&#xC694;</value>
+  </data>
+  <data name="LoginSubtitle" xml:space="preserve">
+    <value>&#xB85C;&#xADF8;&#xC778; &#xD558;&#xC2DC;&#xBA74; &#xC720;&#xC6A9;&#xD55C; &#xC815;&#xBCF4;&#xB4E4;&#xC744; &#xBCF4;&#xC5EC;&#xB4DC;&#xB9B4;&#xAC8C;&#xC694;</value>
+  </data>
+  <data name="UsernameLabel" xml:space="preserve">
+    <value>&#xC544;&#xC774;&#xB514;</value>
+  </data>
+  <data name="UsernamePlaceholder" xml:space="preserve">
+    <value>&#xC544;&#xC774;&#xB514;&#xB97C; &#xC785;&#xB825;&#xD558;&#xC138;&#xC694;</value>
+  </data>
+  <data name="PasswordLabel" xml:space="preserve">
+    <value>&#xBE44;&#xBC00;&#xBC88;&#xD638;</value>
+  </data>
+  <data name="PasswordPlaceholder" xml:space="preserve">
+    <value>&#xBE44;&#xBC00;&#xBC88;&#xD638;&#xB97C; &#xC785;&#xB825;&#xD558;&#xC138;&#xC694;</value>
+  </data>
+  <data name="LoginButton" xml:space="preserve">
+    <value>&#xB85C;&#xADF8;&#xC778;</value>
+  </data>
+  <data name="LoginButtonBusy" xml:space="preserve">
+    <value>&#xB85C;&#xADF8;&#xC778; &#xC911;...</value>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>&#xC544;&#xC774;&#xB514; &#xB610;&#xB294; &#xBE44;&#xBC00;&#xBC88;&#xD638;&#xAC00; &#xC62C;&#xBC14;&#xB974;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</value>
+  </data>
+  <data name="UsernameRequired" xml:space="preserve">
+    <value>&#xC544;&#xC774;&#xB514;&#xB97C; &#xC785;&#xB825;&#xD574;&#xC8FC;&#xC138;&#xC694;.</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>&#xBE44;&#xBC00;&#xBC88;&#xD638;&#xB97C; &#xC785;&#xB825;&#xD574;&#xC8FC;&#xC138;&#xC694;.</value>
+  </data>
+  <data name="SelectLanguageTitle" xml:space="preserve">
+    <value>&#xC5B8;&#xC5B4;&#xB97C; &#xC120;&#xD0DD;&#xD574;&#xC8FC;&#xC138;&#xC694;</value>
+  </data>
+  <data name="ContinueButton" xml:space="preserve">
+    <value>&#xACC4;&#xC18D;&#xD558;&#xAE30;</value>
+  </data>
+</root>

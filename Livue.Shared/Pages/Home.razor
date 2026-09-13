@@ -1,0 +1,19 @@
+﻿@page "/"
+@using Livue.Shared.Services
+@using Livue.Shared.Components
+@inject IFormFactor FormFactor
+@inject IAuthService AuthService
+
+<PageTitle>Livue</PageTitle>
+
+@if (!AuthService.IsAuthenticated)
+{
+    <LoginView OnLoggedIn="StateHasChanged" />
+}
+else
+{
+    <ExpenseDashboard />
+}
+
+@code {
+}
